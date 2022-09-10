@@ -1,29 +1,35 @@
 import React, { useState } from "react";
-import "./loginform.css"
+import "./loginform.css";
 
 const LoginForm = () => {
-    const [popupStyle, showPopup] = useState("hide")
+  const [username, setUserName] = useState([
+    { id: 1, name: "admin", password: 123, admin: true },
+    { id: 2, name: "admin1", password: 123, admin: true },
+    { id: 3, name: "user", password: 123, admin: false },
+    { id: 4, name: "user2", password: 123, admin: false },
+  ]);
 
-    const popup = () => {
-        showPopup("login-popup")
-        setTimeout(() => showPopup("hide"), 3000)
-    }
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
 
-    return (
-        <div className="cover">
-            <h1>Login</h1>
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
-
-            <div className="login-btn" onClick={popup}>Login</div>
-
-            <div className={popupStyle}>
-                <h3>Login Failed</h3>
-                <p>Username or password incorrect</p>
-            </div>
-
-        </div>
-    )
-}
+  return (
+    <div className="cover">
+      <h1>Login</h1>
+      <form>
+        <input type="text" name="userName" placeholder="username" />
+        <input type="password" name="password" placeholder="password" />
+        <button type="submit" onClick={submit} className="login-btn">
+          Login
+        </button>
+      </form>
+      <div>
+        <h3>Login Failed</h3>
+        <p>Username or password incorrect</p>
+      </div>
+    </div>
+  );
+};
 
 export default LoginForm;

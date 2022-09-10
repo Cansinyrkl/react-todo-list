@@ -26,7 +26,7 @@
 
 input {
     border: none;
-    background-color: wheat;
+    background-color: rgb(189, 189, 189);
     height: 2em;
     width: 85%;
     border-radius: 0.25em;
@@ -35,7 +35,7 @@ input {
 }
 
 input:focus {
-    outline-color: burlywood;
+    outline-color: rgb(43, 43, 43);
 }
 
 .login-btn {

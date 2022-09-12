@@ -1,38 +1,41 @@
 import React, { useState } from "react";
 import "./loginform.css";
-import { Route } from "react-router-dom";
-import Admin from "./userspages/admin";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const [username, setUserName] = useState([
+  const [userdatas, setUserDatas] = useState([
     { id: 1, name: "admin", password: "123", admin: true },
     { id: 2, name: "admin1", password: "123", admin: true },
     { id: 3, name: "user", password: "123", admin: false },
     { id: 4, name: "user2", password: "123", admin: false },
   ]);
+  const [userNameHolder, setUserNameHolder] = useState();
+  const [passwordHolder, setPasswordHolder] = useState();
 
-  const [userDatasHolder, setUserDatasHolder] = useState();
-  const [passawordDatasHolder, setPasswordDatasHolder] = useState();
+  const navigate = useNavigate();
 
   const userDataHolder = (e) => {
     const userNameValue = e.target.value;
-    setUserDatasHolder(userNameValue);
+    setUserNameHolder(userNameValue);
   };
   const passawordDataHolder = (e) => {
     const passawordValue = e.target.value;
-    setPasswordDatasHolder(passawordValue);
+    setPasswordHolder(passawordValue);
   };
 
   const btnClick = () => {
-    const userNa = username.map((item) => item.name);
-    const userPa = username.map((item) => item.password);
+    const checkUser = userdatas.find((user) => {
+      return userNameHolder === user.name && passwordHolder === user.password;
+    });
 
-    const Us = userNa.includes(userDatasHolder);
-    const Pa = userPa.includes(passawordDatasHolder);
-
-    if (Us && Pa) {
+    if (checkUser) {
+      if (checkUser.admin === true) {
+        navigate("/admin");
+      } else {
+        navigate("/user");
+      }
     } else {
-      console.log("başarısız");
+      alert("Yanlış Giriş Yaptınız");
     }
   };
 

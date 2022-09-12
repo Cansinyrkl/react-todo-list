@@ -1,6 +1,6 @@
 import React from "react";
 import LoginForm from "./components/loginform";
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Admin from "./components/userspages/admin";
 import User from "./components/userspages/user";
 
@@ -9,8 +9,8 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<LoginForm />} />
-        <Route path="admin" element={<Admin />} />
-        <Route path="user" element={<User />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </>
   );

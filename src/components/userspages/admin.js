@@ -1,7 +1,5 @@
-import React from "react";
-
-const admin = () => {
-  return <div>Buradaysan Başardın</div>;
+const Admin = () => {
+  return <div>Buradaysan Başardın adminsin</div>;
 };
 
-export default admin;
+export default Admin;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./loginform.css";
-import admin from "./userspages/admin";
+import { Route } from "react-router-dom";
+import Admin from "./userspages/admin";
 
 const LoginForm = () => {
   const [username, setUserName] = useState([
@@ -30,32 +31,33 @@ const LoginForm = () => {
     const Pa = userPa.includes(passawordDatasHolder);
 
     if (Us && Pa) {
-      console.log("başarılı");
     } else {
       console.log("başarısız");
     }
   };
 
   return (
-    <div className="cover">
-      <h1>Login</h1>
-      <form className="form-container">
-        <input
-          type="text"
-          name="userName"
-          placeholder="username"
-          onChange={userDataHolder}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={passawordDataHolder}
-        />
-      </form>
-      <button type="submit" onClick={btnClick} className="login-btn">
-        Login
-      </button>
+    <div className="page">
+      <div className="cover">
+        <h1>Login</h1>
+        <form className="form-container">
+          <input
+            type="text"
+            name="userName"
+            placeholder="username"
+            onChange={userDataHolder}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={passawordDataHolder}
+          />
+        </form>
+        <button type="submit" onClick={btnClick} className="login-btn">
+          Login
+        </button>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const LoginForm = () => {
     { id: 1, name: "admin", password: "123", admin: true },
     { id: 2, name: "admin1", password: "123", admin: true },
     { id: 3, name: "user", password: "123", admin: false },
-    { id: 4, name: "user2", password: "123", admin: false },
+    { id: 4, name: "user1", password: "123", admin: false },
   ]);
   const [userNameHolder, setUserNameHolder] = useState();
   const [passwordHolder, setPasswordHolder] = useState();

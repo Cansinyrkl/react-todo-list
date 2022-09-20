@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { createContext } from "react";
 
 export const TodoListContext = createContext();
@@ -18,14 +17,3 @@ return (
 );
 
 export default TodoListContextProvider;
-=======
-import React from 'react'
-
-const TodoListContext = () => {
-  return (
-    <div>TodoListContext</div>
-  )
-}
-
-export default TodoListContext
->>>>>>> 7cc92392ff1cbcdf69f8a439894cd314089234b9

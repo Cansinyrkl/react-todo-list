@@ -80,3 +80,21 @@ input:focus {
 .todo-list li {
     margin: 8px;
 }
+
+.Exit-btn {
+    position: absolute;
+    margin-bottom: 180%;
+    margin-left: 360%;
+    width: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.Exit-btn:hover {
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s;
+}

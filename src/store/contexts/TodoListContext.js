@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const TodoListContext = createContext();
 
@@ -8,12 +8,12 @@ const TodoListContextProvider = ({ children }) => {
     { id: 2, todo: "yumurta" },
     { id: 3, todo: "yumurta" },
   ]);
-};
 
-return (
-  <TodoListContext.Provider value={{ todos, setTodos }}>
-    {children}
-  </TodoListContext.Provider>
-);
+  return (
+    <TodoListContext.Provider value={{ todos, setTodos }}>
+      {children}
+    </TodoListContext.Provider>
+  );
+};
 
 export default TodoListContextProvider;

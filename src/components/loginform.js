@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./loginform.css";
 import { useNavigate } from "react-router-dom";
+import { TodoListContext } from "../store/contexts/TodoListContext";
 
 const LoginForm = () => {
-  const [userdatas, setUserDatas] = useState([
-    { id: 1, name: "admin", password: "123", admin: true },
-    { id: 2, name: "admin1", password: "123", admin: true },
-    { id: 3, name: "user", password: "123", admin: false },
-    { id: 4, name: "user1", password: "123", admin: false },
-  ]);
+  const { userDatas } = useContext(TodoListContext);
   const [userNameHolder, setUserNameHolder] = useState();
   const [passwordHolder, setPasswordHolder] = useState();
 
@@ -24,7 +20,7 @@ const LoginForm = () => {
   };
 
   const btnClick = () => {
-    const checkUser = userdatas.find((user) => {
+    const checkUser = userDatas.find((user) => {
       return userNameHolder === user.name && passwordHolder === user.password;
     });
 
